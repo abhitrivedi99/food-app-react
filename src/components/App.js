@@ -6,18 +6,13 @@ import Cart from './Cart/Cart'
 
 const App = () => {
 	const [cartShowStatus, setCartShowStatus] = useState(false)
-	console.log(cartShowStatus)
-	const onShowCart = () => {
-		setCartShowStatus(true)
-	}
+	const onShowCart = () => setCartShowStatus(true)
 
-	const onHideCart = () => {
-		setCartShowStatus(false)
-	}
+	const onHideCart = () => setCartShowStatus(false)
 
 	return (
 		<Fragment>
-			{cartShowStatus && <Cart onClose={onHideCart} />}
+			{cartShowStatus && <Cart onHideCart={onHideCart} />}
 			<Header onShowCart={onShowCart} />
 			<main>
 				<Meals />
